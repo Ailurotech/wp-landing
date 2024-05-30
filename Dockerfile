@@ -18,10 +18,10 @@ RUN npm install babel-cli@latest
 RUN npm install @babel/preset-env@latest
 
 # Set working directory to the WordPress root directory
-WORKDIR /var/www/html/wp-content
+WORKDIR /var/www/html/
 
-# Copy the existing WordPress project
-COPY ./html /var/www/html
+# Copy the theme directory to the correct location
+COPY ./ailurotech /var/www/html/wp-content/themes/ailurotech
 
 # Allow Composer plugins to run as root
 ENV COMPOSER_ALLOW_SUPERUSER=1
