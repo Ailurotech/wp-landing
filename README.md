@@ -1,2 +1,2 @@
 # wp-landing
-wp-landing page for the web
+wp-landing page for the web :D
