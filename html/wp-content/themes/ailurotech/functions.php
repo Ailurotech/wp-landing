@@ -33,3 +33,4 @@ add_action('wp_enqueue_scripts', 'ailurotech_enqueue_assets');
 foreach (glob(__DIR__ . '/functions/*.php') as $file) {
     require_once $file;
 }
+
