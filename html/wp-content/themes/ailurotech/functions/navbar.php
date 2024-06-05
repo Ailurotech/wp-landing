@@ -1,22 +1,21 @@
 <?php
-/**
- * Template Name: WP_landing_page
- */
 
- use Timber\Timber;
- use Timber\Menu;
- 
+use Timber\Timber;
+use Timber\Menu;
 
-$context = Timber::context();
-
-
-function setup_timber_menu() {
-    global $context;
-    $context['menu'] = new Menu('primary');
+function register_menus() {
+    register_nav_menus(
+        array(
+            'primary' => __( 'Primary Menu', 'ailurotech' ),
+        )
+    );
 }
+add_action( 'init', 'register_menus' );
 
-// Hook into an appropriate action to set up the menu
-add_action('init', 'setup_timber_menu');
-
-// Render the main template
-Timber::render('index.twig', $context);
+function get_timber_menu() {
+    $context = Timber::context();
+    $context['menu'] = new Menu('primary');
+    $context['site'] = new TimberSite();
+    Timber::render('navbar.twig', $context);
+}
+add_action('wp_head', 'get_timber_menu');
