@@ -1,9 +1,21 @@
-<nav class="navbar">
-  <ul>
-    { % for item in menu.items % }<li>
-      <a href="{{ item.link }}">{{ item.title }}</a>
-    </li>
 
-    {% endfor %}
-  </ul>
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <img src="{{ site.url }}/path/to/logo.png" alt="Logo">
+        Ailurotech
+    </div>
+    <ul class="navbar-menu">
+        {% for item in menu.items %}
+            <li class="navbar-item">
+                <a href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <button class="navbar-button">Sign Up</button>
+    <div class="navbar-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </nav>

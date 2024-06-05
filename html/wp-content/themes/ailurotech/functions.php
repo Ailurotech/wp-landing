@@ -22,15 +22,14 @@ add_action('after_setup_theme', function() {
     ));
 });
 
+// Enqueue styles and scripts
 function ailurotech_enqueue_assets() {
     wp_enqueue_style('ailurotech-main-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.0.0', 'all');
     wp_enqueue_script('ailurotech-main-script', get_template_directory_uri() . '/dist/js/main.js', array(), '1.0.0', true);
 }
-
 add_action('wp_enqueue_scripts', 'ailurotech_enqueue_assets');
 
 
 foreach (glob(__DIR__ . '/functions/*.php') as $file) {
     require_once $file;
 }
-
