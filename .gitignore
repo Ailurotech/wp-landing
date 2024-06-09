@@ -8,7 +8,7 @@
 /html/*
 /html/wp-content/*
 /html/wp-content/themes/*
-/html/wp-content/themes/ailurotech/node_modules
+/html/wp-content/themes/ailurotech/node_modules/*
 
 # Allow only specific directory
 !/html/
@@ -22,3 +22,4 @@
 # Exclude node_modules
 /html/wp-content/themes/ailurotech/node_modules/
 /html/wp-content/themes/ailurotech/dist/
+/html/wp-content/themmes
