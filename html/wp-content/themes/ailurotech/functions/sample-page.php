@@ -26,9 +26,10 @@ function ailurotech_load_custom_template($template) {
         error_log('Sample Page Template Loaded');
         error_log(print_r($context, true));
 
-        Timber::render('sample-page.twig', $context);
+        
         exit; // Prevent WordPress from loading the default template
     }
     return $template;
 }
-add_filter('template_include', 'ailurotech_load_custom_template');
+
+Timber::render('sample-page.twig', $context);
