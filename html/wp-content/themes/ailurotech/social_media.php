@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: socialmedia Page
+ * Template Name: Social Media Page
  */
 
 use Timber\Timber;
