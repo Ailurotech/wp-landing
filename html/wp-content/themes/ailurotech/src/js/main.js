@@ -1,9 +1,8 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.navbar-toggle .toggle-icon');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.querySelector('.navbar-toggle');
-    const menu = document.querySelector('.navbar-menu');
-
-    toggle.addEventListener('click', function () {
-        menu.classList.toggle('active');
-    });
+  toggleButton.addEventListener('click', function () {
+      dropdownMenu.classList.toggle('active');
+  });
 });
