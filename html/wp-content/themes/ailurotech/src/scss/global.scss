@@ -62,10 +62,24 @@ main {
   }
 }
 
+
 // Footer
 footer {
   background-color: $secondary-color;
   color: #fff;
   padding: 10px 0;
   text-align: center;
+}
+
+.social_meidia{
+  height:150px;
+  width:1050px;
+  
+  display: flex;
+
+}
+.icon{
+  height:150px;
+  width:150px;
+  margin-right: 150px;
 }

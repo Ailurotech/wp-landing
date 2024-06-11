@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html {{ language_attributes }}>
+
   <head>
     <meta charset="{{ bloginfo('charset') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,14 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ theme.link }}/dist/css/style.css" />
+
     <script src="{{ theme.link }}/dist/js/main.js" defer></script>
   </head>
   <body {{ body_class }}>
     {% include 'partial/navbar.twig' %}
     <main>
-      {% block content %}
 
+      {% block content %}
+      
+    
       {% endblock %}
+    
     </main>
     {% include 'partial/footer.twig' %}
   </body>
