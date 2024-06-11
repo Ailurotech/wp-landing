@@ -25,6 +25,3 @@ Timber::render('partial/link.twig', $context);
 
 
 
-
-// Render the Twig template
-Timber::render('partial/link.twig', $context);
