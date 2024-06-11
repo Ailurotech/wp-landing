@@ -1,19 +1,15 @@
-
-
-<div class='social_meidia' > 
+<style>
+.social_media{
+    display: grid;
+    grid-auto-flow: column; 
+    gap: 10%;
+}
+.icon{
+  
+}
+</style>
+<div class='social_media'> 
     {% for icon in links_array %}
-        
         <img class="icon" src="{{ icon }}" alt="Social Media Icon">
     {% endfor %}
-
-
-<div>
-
-
-
-
-
-
-
-
-
+</div>
