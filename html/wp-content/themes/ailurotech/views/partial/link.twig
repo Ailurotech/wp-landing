@@ -1,0 +1,29 @@
+<style>
+    .container {
+        display: flex;
+        width:700px;
+        height:1000px;
+    }
+    .column {
+        flex: 1;
+        padding: 10px;
+    }
+    .title {
+        /* 标题的样式 */
+    }
+    .link {
+        color: #6A5ACD; /* 蓝紫色 */
+        margin-top: 5px; /* 设置上边距 */
+    }
+</style>
+
+<div class="container">
+    {% for column in link %}
+        <div class="column">
+            <h2 class="title">{{ titles[loop.index0] }}</h2> <!-- 为标题设置 class="title" -->
+            {% for item in column %}
+                <span class="link">{{ item }}</span><br> <!-- 为链接设置 class="link" -->
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
