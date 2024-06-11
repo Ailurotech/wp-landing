@@ -1,0 +1,33 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <img src="{{ site.theme_link }}/src/assets/images/logo.png" alt="Logo" />
+        <span>Ailurotech</span>
+    </div>
+    <ul class="navbar-menu">
+        {% for item in menu.items %}
+            <li class="navbar-item">
+                <a href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="navbar-button-container">
+        <button class="navbar-button">Sign Up</button>
+    </div>
+    <div class="navbar-toggle">
+        <div class="toggle-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <ul class="dropdown-menu">
+        {% for item in menu.items %}
+            <li>
+                <a href="{{ item.link }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+        <li>
+            <button class="navbar-button">Sign Up</button>
+        </li>
+    </ul>
+</nav>
