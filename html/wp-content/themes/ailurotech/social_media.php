@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default Page
+ * Template Name: Main page
  */
 
 use Timber\Timber;
