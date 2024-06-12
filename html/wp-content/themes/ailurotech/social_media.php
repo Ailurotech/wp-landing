@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Social Media Page
+ * Template Name: Default Page
  */
 
 use Timber\Timber;
@@ -19,4 +19,4 @@ $context['links_array'] = explode(" ", $icon_url);
 
 
 // Render the Twig template
-Timber::render('partial/social_media.twig', $context);
+Timber::render('base.twig', $context);
