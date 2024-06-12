@@ -1,0 +1,18 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 创建三列 */
+    grid-column-gap: 20px; /* 设置列间距 */
+}
+.column {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* 将列内元素垂直排列 */
+}
+.title {
+
+}
+.link {
+    color: #6A5ACD; /* 蓝紫色 */
+    margin-top: 10px; /* 设置上边距 */
+    cursor: pointer; /* 添加手型指针，使链接看起来更具交互性 */
+}
