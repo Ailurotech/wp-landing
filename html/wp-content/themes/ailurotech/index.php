@@ -15,7 +15,7 @@
 
 $context = Timber::context();
 
-
+//footer section
 $icon_url=get_field("icon");
 $icon_target=get_field("icon_target");
 
@@ -42,4 +42,13 @@ $context['title_of_column']=explode("!", $title_of_column);
 
 $context['links_array'] = explode(" ", $icon_url);
 $context['icon_target'] = explode(" ", $icon_target);
+/* Contact section */
+$context['contact_section_bg'] = get_field('bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1';
+$context['button_text'] = get_field('buttonText');
+$context['button_href'] = get_field('buttonHref');
+$context['contact_content'] = get_field('content');
+$context['contact_title'] = get_field('title');
+
+// Timber::render('partial/index.twig', $context);
 Timber::render('partial/index.twig', $context);
+
