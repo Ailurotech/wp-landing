@@ -44,6 +44,7 @@ $context['links_array'] = explode(" ", $icon_url);
 $context['icon_target'] = explode(" ", $icon_target);
 Timber::render('partial/index.twig', $context);
 
+<<<<<<< Updated upstream
 /* Contact section */
 $context['contact_section_bg'] = get_field('bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1';
 $context['button_text'] = get_field('buttonText');
@@ -53,3 +54,6 @@ $context['contact_title'] = get_field('title');
 
 // Timber::render('partial/index.twig', $context);
 Timber::render('partial/contact-section.twig', $context);
+=======
+
+>>>>>>> Stashed changes
