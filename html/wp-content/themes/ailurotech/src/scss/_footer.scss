@@ -3,12 +3,42 @@
     grid-template-columns: repeat(4, 1fr);  /* Creates four equal columns */
     gap: 20px;  /* Optional: Adjusts the gap between columns */
 }
+.footer-logo{
+    height: auto;
+    width:70%;
+    margin-bottom: 20px;
+}
 
 .footer-icons {
     width: auto;  /* Makes images fill their container */
     height: 2rem;  /* Maintains aspect ratio of images */
+    margin-right: 15px;
 }
 
-.footer-links-container {
-    /* Styles for individual containers can be added here */
+
+.footer-links{
+    color: #897AE3;
+    margin-bottom: 30px;
+}
+.footer-links:hover {
+    color: darkblue; /* 悬停时的颜色 */
+}
+
+.column-title{
+    color:#3E4265;
+    margin-bottom: 40px;
+}
+
+@media  (max-width: 600px) {
+    .footer-content-container {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .footer-links-container {
+        flex: 1 0 calc(25% - 20px); 
+         
+    }
+    
 }

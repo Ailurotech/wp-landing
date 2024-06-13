@@ -1,18 +1,35 @@
 <footer>
 	<div class="footer-content-container">
 		<div class="footer-icon-container">
-			{% for icon in links_array %}
-				<img class="footer-icons" src="{{ icon }}" alt="Social Media Icon">
+			<img  class="footer-logo" src="{{footer_logo}}" alt="footer logo"></a>
+			<div class="footer-icon-container">
+				{% for icon in links_array %}
+					<a href="{{ icon_target[loop.index-1]}}">
+        			<img class="footer-icons" src="{{ icon }}" alt="Social Media Icon">
+    				</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="footer-links-container">
+			<h3 class="column-title">{{title_of_column[0]}}</h3>
+			{% for index in first_row_title %}
+				<a href="{{first_row_links[loop.index-1]}}"><p class="footer-links">{{index}}</p></a>	
 			{% endfor %}
 		</div>
-		<div class="footer-links-container">sample</div>
-		<div class="footer-links-container">sample</div>
-		<div class="footer-links-container">sample</div>
+		<div class="footer-links-container">
+			<h3 class="column-title">{{title_of_column[1]}}</h3>
+			{% for index in second_row_title %}
+				<a href="{{second_row_links[loop.index-1]}}" ><p class="footer-links">{{index}}</p></a>
+			{% endfor %}
+		</div>
+		<div class="footer-links-container">
+			<h3 class="column-title">{{title_of_column[2]}}</h3>
+			{% for index in third_row_title %}
+				<a href="{{third_row_links[loop.index-1]}}"><p class="footer-links">{{index}}</p></a>	
+			{% endfor %}
+		</div>
 	</div>
-</div>
-<div class="container">
-
-	<p>&copy;
-		{{ "now"|date("Y") }}
-		{{ site.name }}. All rights reserved.</p>
-</div></footer>
+	<div class="container">
+        <p>&copy; {{ "now"|date("Y") }} {{ site.name }}. All rights reserved.</p>
+    </div>
+</footer>
