@@ -9,6 +9,16 @@
     height: 2rem;  /* Maintains aspect ratio of images */
 }
 
-.footer-links-container {
-    /* Styles for individual containers can be added here */
+
+.footer-links{
+    color: #897AE3;
+    margin-bottom: 30px;
+}
+.footer-links:hover {
+    color: darkblue; /* 悬停时的颜色 */
+}
+
+.column-title{
+    color:#3E4265;
+    margin-bottom: 40px;
 }
