@@ -14,4 +14,8 @@
  */
 
 $context = Timber::context();
+
+$icon_url=get_field("icon");
+$context['links_array'] = explode(" ", $icon_url);
+
 Timber::render('partial/index.twig', $context);

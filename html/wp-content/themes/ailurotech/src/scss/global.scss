@@ -11,6 +11,8 @@ $font-family: 'Blinker', sans-serif;
   padding: 0;
 }
 
+
+
 body {
   font-family: $font-family;
   color: $primary-color;
@@ -66,6 +68,6 @@ main {
 footer {
   background-color: $secondary-color;
   color: #fff;
-  padding: 10px 0;
+  padding: 2rem 0;
   text-align: center;
 }
