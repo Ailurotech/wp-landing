@@ -1,0 +1,8 @@
+<div>
+	{% if button_text %}
+		{% if button_href is not defined or button_href == '' %}
+			{% set button_href = '#' %}
+		{% endif %}
+		<a href={{button_href}} class="button">{{button_text}}</a>
+	{% endif %}
+	<div>

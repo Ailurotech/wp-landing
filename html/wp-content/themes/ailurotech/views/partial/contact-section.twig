@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html {{ language_attributes }}>
+	<head>
+		<meta charset="{{ bloginfo('charset') }}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="profile" href="http://gmpg.org/xfn/11"/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href="{{ theme.link }}/dist/css/style.css"/>
+		<script src="{{ theme.link }}/dist/js/main.js" defer></script>
+	</head>
+	<body {{ body_class }}>
+		<div class="contact-section">
+			{% if contact_section_bg %}
+				<div class="video-background">
+					<iframe src={{contact_section_bg}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			{% endif %}
+			<div class="contact-section-content">
+				{% if post.post_title %}
+					<h1 class="contact-section-title">{{ post.post_title }}</h1>
+				{% endif %}
+				{% if post.post_content %}
+					<p class="contact-section-description">{{ post.post_content }}</p>
+				{% endif %}
+        {% include 'partial/button.twig' %}
+			</div>
+		</div>
+	</body>
+</html>
