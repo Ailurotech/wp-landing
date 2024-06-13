@@ -53,7 +53,6 @@ $context['contact_content'] = get_field('content');
 $context['contact_title'] = get_field('title');
 
 // Timber::render('partial/index.twig', $context);
-Timber::render('partial/contact-section.twig', $context);
 =======
 
 >>>>>>> Stashed changes
