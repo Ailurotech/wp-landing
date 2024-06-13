@@ -1,3 +1,5 @@
 /composer.lock
 /vendor/
 /wordpress/
+# Ignore all node_modules directories
+node_modules/
