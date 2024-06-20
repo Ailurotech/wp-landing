@@ -1,0 +1,28 @@
+{% extends 'base.twig' %}
+
+{% block welcome %}
+	<div class="welcome-section">
+		{% if welcome_section_bg %}
+			<div class="video-background">
+				<iframe src={{welcome_section_bg}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		{% endif %}
+		<div class="welcome-section-content">
+			{% if welcome_title %}
+				<h1 class="welcome-section-title">{{ welcome_title }}</h1>
+			{% endif %}
+			{% if welcome_content %}
+				<p class="welcome-section-description">{{ welcome_content }}</p>
+			{% endif %}
+			<div class="jump-page">
+				{% include 'partial/button.twig' %}
+				{% if demo_text %}
+					{% if demo_href is not defined or demo_href == '' %}
+						{% set demo_href = '#' %}
+					{% endif %}
+					<a href={{demo_href}} class="demo-link">{{demo_text}}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</body>{% endblock %}
