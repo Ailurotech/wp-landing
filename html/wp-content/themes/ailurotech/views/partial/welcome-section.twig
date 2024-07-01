@@ -12,7 +12,7 @@
 			<p class="welcome-section-description">{{ welcome_content }}</p>
 		{% endif %}
 		<div class="jump-page">
-			{% include 'partial/button.twig' %}
+			{% include 'partial/button.twig' with { 'text': welcome_button_text, 'href': welcome_button_href } %}
 			{% if demo_text %}
 				{% if demo_href is not defined or demo_href == '' %}
 					{% set demo_href = '#' %}

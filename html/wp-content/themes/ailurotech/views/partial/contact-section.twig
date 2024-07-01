@@ -11,6 +11,6 @@
 		{% if contact_content %}
 			<p class="contact-section-description">{{ contact_content }}</p>
 		{% endif %}
-		{% include 'partial/button.twig' %}
+    {% include 'partial/button.twig' with { 'text': button_text, 'href': button_href } %}
 	</div>
 </div>
