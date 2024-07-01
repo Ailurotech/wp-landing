@@ -1,22 +1,16 @@
-{% extends 'base.twig' %}
-
-{% block contact %}
 <div class="contact-section">
-			{% if contact_section_bg %}
-				<div class="video-background">
-					<iframe src={{contact_section_bg}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			{% endif %}
-			<div class="contact-section-content">
-				{% if contact_title %}
-					<h1 class="contact-section-title">{{ contact_title }}</h1>
-				{% endif %}
-				{% if contact_content %}
-					<p class="contact-section-description">{{ contact_content }}</p>
-				{% endif %}
-        {% include 'partial/button.twig' %}
-			</div>
+	{% if contact_section_bg %}
+		<div class="video-background">
+			<iframe src={{contact_section_bg}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		</div>
-</body>
-{% endblock %}
-
+	{% endif %}
+	<div class="contact-section-content">
+		{% if contact_title %}
+			<h1 class="contact-section-title">{{ contact_title }}</h1>
+		{% endif %}
+		{% if contact_content %}
+			<p class="contact-section-description">{{ contact_content }}</p>
+		{% endif %}
+		{% include 'partial/button.twig' %}
+	</div>
+</div>

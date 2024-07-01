@@ -58,6 +58,4 @@ $context['welcome_title'] = get_field('welcome_title');
 $context['demo_text'] = get_field('welcome_linkText');
 $context['demo_href'] = get_field('welcome_linkHref');
 
-// Timber::render('partial/index.twig', $context);
 Timber::render('partial/index.twig', $context);
-
