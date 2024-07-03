@@ -49,6 +49,13 @@ $context['button_href'] = get_field('buttonHref');
 $context['contact_content'] = get_field('content');
 $context['contact_title'] = get_field('title');
 
-// Timber::render('partial/index.twig', $context);
-Timber::render('partial/index.twig', $context);
+/* Welcome section */
+$context['welcome_section_bg'] = get_field('welcome_bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1';
+$context['welcome_button_text'] = get_field('welcome_buttonText');
+$context['welcome_button_href'] = get_field('welcome_buttonHref');
+$context['welcome_content'] = get_field('welcome_content');
+$context['welcome_title'] = get_field('welcome_title');
+$context['demo_text'] = get_field('welcome_linkText');
+$context['demo_href'] = get_field('welcome_linkHref');
 
+Timber::render('partial/index.twig', $context);
