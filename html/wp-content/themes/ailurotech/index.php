@@ -48,7 +48,24 @@ $context['button_text'] = get_field('buttonText');
 $context['button_href'] = get_field('buttonHref');
 $context['contact_content'] = get_field('content');
 $context['contact_title'] = get_field('title');
+//feature section
 
-// Timber::render('partial/index.twig', $context);
+
+$feature_icon=get_field('feature_icon');
+$feature_title=get_field('feature_title');
+
+$feature_left_title=get_field('feature_left_title');
+$feature_left_details=get_field('feature_left_details');
+$feature_right_details_title=get_field('feature_right_details_title');
+$feature_right_details_number=get_field('feature_right_details_number');
+
+$context['feature_title']=get_field('feature_title');
+$context['feature_right_title']=get_field('feature_right_title');
+$context['feature_icon'] = explode(" ", $feature_icon);
+$context['feature_left_title']=explode(",",$feature_left_title);
+$context['feature_left_details']=explode("!",$feature_left_details);
+$context['feature_right_details_title']=explode(",",$feature_right_details_title);
+$context['feature_right_details_number']=explode(" ",$feature_right_details_number);
+
 Timber::render('partial/index.twig', $context);
 
