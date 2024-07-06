@@ -67,5 +67,15 @@ $context['feature_left_details']=explode("!",$feature_left_details);
 $context['feature_right_details_title']=explode(",",$feature_right_details_title);
 $context['feature_right_details_number']=explode(" ",$feature_right_details_number);
 
+
+/* Welcome section */
+$context['welcome_section_bg'] = get_field('welcome_bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1';
+$context['welcome_button_text'] = get_field('welcome_buttonText');
+$context['welcome_button_href'] = get_field('welcome_buttonHref');
+$context['welcome_content'] = get_field('welcome_content');
+$context['welcome_title'] = get_field('welcome_title');
+$context['demo_text'] = get_field('welcome_linkText');
+$context['demo_href'] = get_field('welcome_linkHref');
+
 Timber::render('partial/index.twig', $context);
 
