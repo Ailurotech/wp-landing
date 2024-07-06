@@ -1,0 +1,32 @@
+<div id="feature" class="feature-container">
+  <div class="feature-title">
+    <h1>{{feature_title}}</h1>
+  </div>
+  <div class="feature-left">
+    {% for index in feature_left_title %}
+      <div class="feature-left-container">
+        <img class="feature-left-icon" src="{{feature_icon[loop.index-1]}}" alt="feature icon" />
+        <p><span class="feature-left-title">{{feature_left_title[loop.index-1]}}</span> <span class="feature-left-details">{{feature_left_details[loop.index-1]}}</span></p>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="feature-right">
+    <div class="feature-right-title">
+      <h3>{{feature_right_title}}</h3>
+    </div>
+    <div class="feature-right-details">
+      {% for index in feature_right_details_title %}
+      <div class="feature_right_details_container">
+        <div class="feature_right_details_title_container">
+          <h5 class="feature-right-text">{{feature_right_details_title[loop.index-1]}}</h5>
+          <h5 class="feature-right-text">{{feature_right_details_number[loop.index-1]}}</h5>
+        </div>
+        <div class="feature_right_progress_bar">
+          <div class="feature_right_progress_number" style="width: {{feature_right_details_number[loop.index-1]}}%">
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div> 
+  <div>
+<div>
