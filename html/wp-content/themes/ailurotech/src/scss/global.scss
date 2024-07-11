@@ -51,6 +51,7 @@ header {
 main {
   max-width: 100%;
   margin: 0 auto;
+  min-width: 200px;
 
   h1,
   h2,
@@ -72,4 +73,5 @@ footer {
   color: $primary-color;
   padding: 10px 0;
   text-align: center;
+  min-width: 200px;
 }
