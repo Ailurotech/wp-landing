@@ -23,25 +23,25 @@ services:
           name: wordpress-db
           property: database
 
-  - type: web
-    name: phpmyadmin
+  - type: pserv
+    name: mysql
+    plan: standard
     env: docker
-    image: phpmyadmin/phpmyadmin
-    plan: free
-    startCommand: docker run -p 8080:80 --env PMA_HOST=$PMA_HOST --env MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD phpmyadmin/phpmyadmin
+    disk:
+      name: mysql
+      mountPath: /var/lib/mysql
+      sizeGB: 10
     envVars:
-      - key: PMA_HOST
-        fromDatabase:
-          name: wordpress-db
-          property: host
-      - key: MYSQL_ROOT_PASSWORD
-        fromDatabase:
-          name: wordpress-db
-          property: password
+    - fromGroup: mysql
 
-databases:
-  - name: wordpress-db
-    type: mysql
-    plan: free
-    properties:
-      mysqlVersion: 8.0
+  envVarGroups:
+  - name: mysql
+    envVars:
+    - key: MYSQL_DATABASE
+      value: mysql
+    - key: MYSQL_USER
+      value: mysql
+    - key: MYSQL_PASSWORD
+      generateValue: true
+    - key: MYSQL_ROOT_PASSWORD
+      generateValue: true
