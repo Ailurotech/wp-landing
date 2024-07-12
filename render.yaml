@@ -4,51 +4,44 @@ services:
     env: docker
     plan: free
     buildCommand: docker build -t wordpress .
-    startCommand: docker run -p 8000:80 -v ./html:/var/www/html --env WORDPRESS_DB_HOST=db:3306 --env WORDPRESS_DB_USER=ailurotech --env WORDPRESS_DB_PASSWORD=ilovecats --env WORDPRESS_DB_NAME=ilovecats wordpress
-    mounts:
-      - path: /var/www/html
-        volume: wordpress_html
+    startCommand: docker run -p 8000:80 --env WORDPRESS_DB_HOST=$WORDPRESS_DB_HOST --env WORDPRESS_DB_USER=$WORDPRESS_DB_USER --env WORDPRESS_DB_PASSWORD=$WORDPRESS_DB_PASSWORD --env WORDPRESS_DB_NAME=$WORDPRESS_DB_NAME wordpress
     envVars:
       - key: WORDPRESS_DB_HOST
-        value: db:3306
+        fromDatabase:
+          name: wordpress-db
+          property: host
       - key: WORDPRESS_DB_USER
-        value: ailurotech
+        fromDatabase:
+          name: wordpress-db
+          property: user
       - key: WORDPRESS_DB_PASSWORD
-        value: ilovecats
+        fromDatabase:
+          name: wordpress-db
+          property: password
       - key: WORDPRESS_DB_NAME
-        value: ilovecats
-
-  - type: pserv
-    name: db
-    env: docker
-    image: mariadb:latest
-    plan: free
-    startCommand: docker run -v db_data:/var/lib/mysql --env MARIADB_ROOT_PASSWORD=rootpassword --env MARIADB_DATABASE=ilovecats --env MARIADB_USER=ailurotech --env MARIADB_PASSWORD=ilovecats mariadb:latest --innodb_use_native_aio=0
-    mounts:
-      - path: /var/lib/mysql
-        volume: db_data
-    envVars:
-      - key: MARIADB_ROOT_PASSWORD
-        value: rootpassword
-      - key: MARIADB_DATABASE
-        value: ilovecats
-      - key: MARIADB_USER
-        value: ailurotech
-      - key: MARIADB_PASSWORD
-        value: ilovecats
+        fromDatabase:
+          name: wordpress-db
+          property: database
 
   - type: web
     name: phpmyadmin
     env: docker
     image: phpmyadmin/phpmyadmin
     plan: free
-    startCommand: docker run -p 8080:80 --env PMA_HOST=db --env MYSQL_ROOT_PASSWORD=rootpassword phpmyadmin/phpmyadmin
+    startCommand: docker run -p 8080:80 --env PMA_HOST=$PMA_HOST --env MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD phpmyadmin/phpmyadmin
     envVars:
       - key: PMA_HOST
-        value: db
+        fromDatabase:
+          name: wordpress-db
+          property: host
       - key: MYSQL_ROOT_PASSWORD
-        value: rootpassword
+        fromDatabase:
+          name: wordpress-db
+          property: password
 
-volumes:
-  - name: wordpress_html
-  - name: db_data
+databases:
+  - name: wordpress-db
+    type: mysql
+    plan: free
+    properties:
+      mysqlVersion: 8.0
