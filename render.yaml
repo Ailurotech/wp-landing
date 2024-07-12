@@ -7,21 +7,17 @@ services:
     startCommand: docker run -p 8000:80 --env WORDPRESS_DB_HOST=$WORDPRESS_DB_HOST --env WORDPRESS_DB_USER=$WORDPRESS_DB_USER --env WORDPRESS_DB_PASSWORD=$WORDPRESS_DB_PASSWORD --env WORDPRESS_DB_NAME=$WORDPRESS_DB_NAME wordpress
     envVars:
       - key: WORDPRESS_DB_HOST
-        fromDatabase:
-          name: wordpress-db
-          property: host
+        fromGroup: mysql
+        name: host
       - key: WORDPRESS_DB_USER
-        fromDatabase:
-          name: wordpress-db
-          property: user
+        fromGroup: mysql
+        name: user
       - key: WORDPRESS_DB_PASSWORD
-        fromDatabase:
-          name: wordpress-db
-          property: password
+        fromGroup: mysql
+        name: password
       - key: WORDPRESS_DB_NAME
-        fromDatabase:
-          name: wordpress-db
-          property: database
+        fromGroup: mysql
+        name: database
 
   - type: pserv
     name: mysql
@@ -32,16 +28,16 @@ services:
       mountPath: /var/lib/mysql
       sizeGB: 1
     envVars:
-    - fromGroup: mysql
+      - fromGroup: mysql
 
-  envVarGroups:
+envVarGroups:
   - name: mysql
     envVars:
-    - key: MYSQL_DATABASE
-      value: mysql
-    - key: MYSQL_USER
-      value: mysql
-    - key: MYSQL_PASSWORD
-      generateValue: true
-    - key: MYSQL_ROOT_PASSWORD
-      generateValue: true
+      - key: MYSQL_DATABASE
+        value: mysql
+      - key: MYSQL_USER
+        value: mysql
+      - key: MYSQL_PASSWORD
+        generateValue: true
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
