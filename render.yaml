@@ -18,7 +18,7 @@ services:
       - key: WORDPRESS_DB_NAME
         value: ilovecats
 
-  - type: privateService
+  - type: pserv
     name: db
     env: docker
     image: mariadb:latest
