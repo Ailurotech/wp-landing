@@ -4,25 +4,15 @@ services:
     env: docker
     plan: free
     buildCommand: docker build -t wordpress .
-    startCommand: docker run -p 8000:80 --env WORDPRESS_DB_HOST=$WORDPRESS_DB_HOST --env WORDPRESS_DB_USER=$WORDPRESS_DB_USER --env WORDPRESS_DB_PASSWORD=$WORDPRESS_DB_PASSWORD --env WORDPRESS_DB_NAME=$WORDPRESS_DB_NAME wordpress
     envVars:
       - key: WORDPRESS_DB_HOST
-        fromGroup: mysql
-        name: host
-      - key: WORDPRESS_DB_USER
-        fromGroup: mysql
-        name: user
-      - key: WORDPRESS_DB_PASSWORD
-        fromGroup: mysql
-        name: password
-      - key: WORDPRESS_DB_NAME
-        fromGroup: mysql
-        name: database
+        fromService: mysql
+      - fromGroup: mysql
 
   - type: pserv
     name: mysql
-    plan: standard
     env: docker
+    plan: free
     disk:
       name: mysql
       mountPath: /var/lib/mysql
@@ -34,9 +24,9 @@ envVarGroups:
   - name: mysql
     envVars:
       - key: MYSQL_DATABASE
-        value: mysql
+        value: ilovecats
       - key: MYSQL_USER
-        value: mysql
+        value: ailurotech
       - key: MYSQL_PASSWORD
         generateValue: true
       - key: MYSQL_ROOT_PASSWORD
