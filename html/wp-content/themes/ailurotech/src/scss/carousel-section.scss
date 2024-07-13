@@ -1,0 +1,22 @@
+.carousel-section {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(
+      to top,
+      #F4F6FA 0%,
+      #F4F6FA 20%,
+      background-color 20%,
+      background-color 60%,
+      #F4F6FA  60%,
+      #F4F6FA  100%
+    ); 
+}
+
+.carousel-container{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5vh;
+  height: 90vh;
+  width: 70%;
+  background-color: aqua;
+}
