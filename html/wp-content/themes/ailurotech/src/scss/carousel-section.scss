@@ -1,22 +1,118 @@
 .carousel-section {
     width: 100%;
-    min-height: 100vh;
+    height: auto;
     background: linear-gradient(
       to top,
       #F4F6FA 0%,
-      #F4F6FA 20%,
-      background-color 20%,
-      background-color 60%,
-      #F4F6FA  60%,
-      #F4F6FA  100%
+      #F4F6FA 50%,
+      background-color 50%,
+      background-color 100%,
     ); 
 }
 
 .carousel-container{
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5vh;
-  height: 90vh;
-  width: 70%;
-  background-color: aqua;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr; 
+  gap: 20px;
 }
+.carousel-title-details{
+  color:rgba(105, 111, 140, 1);
+}
+.carousel-title{
+  font-size: 15px;
+}
+
+.carousel-image{
+  width: 100%;
+  height: auto;
+  margin-top: 5px;
+}
+
+.carousel-image-container{
+  word-break: break-word;
+}
+
+.carousel-details-title{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.carousel-details-title-details{
+  color: rgba(105, 111, 140, 1);
+}
+
+.carousel-bottom{
+  height: 200px;
+  grid-column: 1 / -1; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.carousel-bottom-details-container{
+  grid-template-columns: auto 1fr; /* 左右两列 */
+  grid-template-rows: auto 1fr;
+  display: grid;
+  column-gap: max(1vw, 13px);
+}
+
+.carousel-circle {
+  width: 5vw; 
+  height: 5vw;
+  min-width: 40px;
+  min-height: 40px;
+  background: rgba(51, 102, 255, 1); 
+  border-radius: 50%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.carousel-circle-number {
+  font-size: 18px; 
+  color: white; 
+}
+.carousel-circle-container{
+  grid-column: 1; 
+  grid-row: 1 / span 2; 
+}
+
+.carousel-bottom-title-container{
+  grid-column: 2; 
+  grid-row: 1; 
+  white-space: normal; /* 允许换行 */
+  overflow-wrap: break-word; /* 在单词中间换行 */
+  word-break: break-word;
+  
+  
+}
+.carousel-bottom-title{
+  margin-bottom: 10px;
+  font-weight: 600;
+
+}
+.carousel-bottom-title-details{
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(105, 111, 140, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  grid-column: 2; /* 右侧第一个元素 */
+  grid-row: 2;
+  white-space: normal; /* 允许换行 */
+  overflow-wrap: break-word; /* 在单词中间换行 */
+  word-break: break-word;
+}
+
+@media  (max-width: 700px){
+  
+
+}
+

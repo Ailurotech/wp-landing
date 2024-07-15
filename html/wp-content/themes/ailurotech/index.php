@@ -48,6 +48,14 @@ $context['welcome_content'] = get_field('welcome_content');
 $context['welcome_title'] = get_field('welcome_title');
 $context['demo_text'] = get_field('welcome_linkText');
 $context['demo_href'] = get_field('welcome_linkHref');
+//carousel section
+$context['items'] = [
+    ['title' => 'Streamline workflows', 'details' => 'Evaluate business processes and identify areas where technology can streamline operations.'],
+    
+];
+
+
+
 
 Timber::render('partial/index.twig', $context);
 
