@@ -49,11 +49,11 @@ $context['welcome_title'] = get_field('welcome_title');
 $context['demo_text'] = get_field('welcome_linkText');
 $context['demo_href'] = get_field('welcome_linkHref');
 //carousel section
-$context['items'] = [
-    ['title' => 'Streamline workflows', 'details' => 'Evaluate business processes and identify areas where technology can streamline operations.'],
-    
-];
-
+$context['carousel_title']=explode("!", get_field('carousel_title'));
+$context['carousel_title_details']=explode("!", get_field('carousel_title_details'));
+$context['carousel_left_img']=explode("!", get_field('carousel_left_img'));
+$context['carousel_right_img']=explode("!", get_field('carousel_right_img'));
+$context['carousel_detail_left_title']=explode("!", get_field('carousel_detail_left_title'));
 
 
 
