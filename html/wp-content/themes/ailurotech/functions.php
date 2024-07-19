@@ -47,22 +47,16 @@ foreach (glob(__DIR__ . '/functions/*.php') as $file) {
 }
 
 // subscription
-function add_subscription_menu_item($items, $args)
-{
-    $query = new WP_Query(
-        array(
-            'post_type' => 'page',
-            'title' => 'Subscription',
-            'posts_per_page' => 1
-        )
-    );
-    if ($query->have_posts()) {
-        $query->the_post();
-        $subscription_page_url = get_permalink();
-        $items .= '<li><a href="' . $subscription_page_url . '">Subscription</a></li>';
-        wp_reset_postdata();
-    }
-
-    return $items;
+function add_custom_page_template($templates) {
+    $templates['page-subscription.php'] = 'Subscription Page';
+    return $templates;
 }
-add_filter('wp_nav_menu_items', 'add_subscription_menu_item', 10, 2);
+add_filter('theme_page_templates', 'add_custom_page_template');
+
+function load_custom_page_template($template) {
+    if (get_page_template_slug() === 'page-subscription.php') {
+        $template = get_template_directory() . '/page-subscription.twig';
+    }
+    return $template;
+}
+add_filter('template_include', 'load_custom_page_template');
