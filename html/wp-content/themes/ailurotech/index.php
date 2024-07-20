@@ -54,8 +54,8 @@ $context['carousel_title_details']=explode("!", get_field('carousel_title_detail
 $context['carousel_left_img']=explode("!", get_field('carousel_left_img'));
 $context['carousel_right_img']=explode("!", get_field('carousel_right_img'));
 $context['carousel_detail_left_title']=explode("!", get_field('carousel_detail_left_title'));
-
-
+$context['carousel_detail_left_details']=explode("!", get_field('carousel_detail_left_details'));
+$context['carousel_detail_right_title']=explode("!", get_field('carousel_detail_right_title'));
 
 Timber::render('partial/index.twig', $context);
 
