@@ -56,6 +56,14 @@ $context['carousel_right_img']=explode("!", get_field('carousel_right_img'));
 $context['carousel_detail_left_title']=explode("!", get_field('carousel_detail_left_title'));
 $context['carousel_detail_left_details']=explode("!", get_field('carousel_detail_left_details'));
 $context['carousel_detail_right_title']=explode("!", get_field('carousel_detail_right_title'));
+$context['carousel_detail_right_details']=explode("!", get_field('carousel_detail_right_details'));
+$context['carousel_bottom_first_title']=explode("!", get_field('carousel_bottom_first_title'));
+$context['carousel_bottom_second_title']=explode("!", get_field('carousel_bottom_second_title'));
+$context['carousel_bottom_third_title']=explode("!", get_field('carousel_bottom_third_title'));
+$context['carousel_bottom_first_detail']=explode("!", get_field('carousel_bottom_first_detail'));
+$context['carousel_bottom_second_detail']=explode("!", get_field('carousel_bottom_second_detail'));
+$context['carousel_bottom_third_detail']=explode("!", get_field('carousel_bottom_third_detail'));
+
 
 Timber::render('partial/index.twig', $context);
 

@@ -48,12 +48,12 @@
 }
 
 .carousel-bottom{
-  height: 200px;
+  height: auto;
   grid-column: 1 / -1; 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 60px;
-  margin-bottom: 100px;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 .carousel-bottom-details-container{
@@ -99,7 +99,7 @@
 
 }
 .carousel-bottom-title-details{
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
   color: rgba(105, 111, 140, 1);
   overflow: hidden;
