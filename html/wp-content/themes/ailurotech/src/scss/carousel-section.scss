@@ -8,17 +8,25 @@
       background-color 50%,
       background-color 100%,
     ); 
+    
+
+}
+.scroll{
+  display: flex;
+  overflow-x: auto;
 }
 
 .carousel-container{
-  margin-left: 10%;
-  margin-right: 10%;
+  flex-basis: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
   margin-top: 5%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 1fr; 
   gap: 20px;
+  flex-shrink: 0;
 }
 .carousel-title-details{
   color:rgba(105, 111, 140, 1);

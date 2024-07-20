@@ -1,6 +1,7 @@
 <section class="carousel-section">
-    <div class="carousel-container">
-        {% for i in carousel_title %}
+    <div class="scroll">
+    {% for i in carousel_title %}
+        <div class="carousel-container">
             {% set outer_index = loop.index - 1 %}
             <div class="carousel-title">
                 <h1>{{ carousel_title[outer_index] }}</h1>
@@ -53,6 +54,7 @@
                     </div>
                 {% endfor %}
             </div>
-        {% endfor %}
+        </div>
+    {% endfor %}
     </div>
 </section>
