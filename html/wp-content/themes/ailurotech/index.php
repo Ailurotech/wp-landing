@@ -67,3 +67,4 @@ $context['carousel_bottom_third_detail']=explode("!", get_field('carousel_bottom
 
 Timber::render('partial/index.twig', $context);
 
+
