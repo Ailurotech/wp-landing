@@ -7,11 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 //carousel section
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  contain: true,
-  wrapAround: true
-  
+document.addEventListener('DOMContentLoaded', function() {
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity(elem, {
+      cellAlign: 'left',
+      contain: true,
+      wrapAround: true
+  });
+  setTimeout(function() {
+      flkty.resize();
+  }, 100);
 });

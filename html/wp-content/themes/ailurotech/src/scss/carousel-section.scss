@@ -117,6 +117,9 @@
   overflow-wrap: break-word;
   word-break: break-word;
 }
+.flickity-page-dots .dot {
+  display: none;
+}
 
 @media (max-width: 700px) {
   .carousel-bottom {
