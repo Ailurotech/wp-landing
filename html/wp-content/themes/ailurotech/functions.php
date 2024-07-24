@@ -47,16 +47,22 @@ foreach (glob(__DIR__ . '/functions/*.php') as $file) {
 }
 
 // subscription
-function add_custom_page_template($templates) {
-    $templates['page-subscription.php'] = 'Subscription Page';
-    return $templates;
-}
-add_filter('theme_page_templates', 'add_custom_page_template');
+function add_to_context($context) {
+    $plans = array();
 
-function load_custom_page_template($template) {
-    if (get_page_template_slug() === 'page-subscription.php') {
-        $template = get_template_directory() . '/page-subscription.twig';
+    for ($i = 1; $i <= 3; $i++) {
+        $plans[] = array(
+            'title' => get_field('plan_' . $i . '_title') ?: '',
+            'description' => get_field('plan_' . $i . '_description') ?: '',
+            'monthly_price' => get_field('plan_' . $i . '_monthly_price') ?: 0,
+            'yearly_price' => get_field('plan_' . $i . '_yearly_price') ?: 0,
+            'features' => get_field('plan_' . $i . '_features') ?: array(),
+            'button_link' => get_field('plan_' . $i . '_button_link') ?: '#',
+            'button_text' => get_field('plan_' . $i . '_button_text') ?: 'Sign Up',
+        );
     }
-    return $template;
+
+    $context['plans'] = $plans;
+    return $context;
 }
-add_filter('template_include', 'load_custom_page_template');
+add_filter('timber/context', 'add_to_context');
