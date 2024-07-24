@@ -1,0 +1,68 @@
+<div class="business-section">
+	{% if business_title or business_description %}
+		<div class="text">
+			<div class="title">
+				<h2>{{business_title}}</h2>
+			</div>
+			<p>
+				{{business_description}}
+			</p>
+		</div>
+	{% endif %}
+	<div class="business-tab">
+		<div class="container">
+			{% if tab1_name or tab2_name or tab3_name or tab4_name %}
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">{{tab1_name}}</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">{{tab2_name}}</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">{{tab3_name}}</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab" aria-controls="tab4" aria-selected="false">{{tab4_name}}</button>
+					</li>
+				</ul>
+			{% endif %}
+			<div class="tab-content" id="myTabContent">
+				{% if tab1_img and tab1_name %}
+					<div class="tab-pane fade show active pic-container" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+						<img src={{tab1_img}} alt="tab1 pic">
+					</div>
+				{% endif %}
+				{% if tab2_img and tab2_name %}
+					<div class="tab-pane fade pic-container" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+						<img src={{tab2_img}} alt="tab2 pic">
+					</div>
+				{% endif %}
+				{% if tab3_img and tab3_name %}
+					<div class="tab-pane fade pic-container" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+						<img src={{tab3_img}} alt="tab3 pic">
+					</div>
+				{% endif %}
+				{% if tab4_img and tab4_name %}
+					<div class="tab-pane fade pic-container" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+						<img src={{tab4_img}} alt="tab4 pic">
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="business-statistics">
+		{% for i in 0..(business_icons|length - 1) %}
+			{% set business_icon = business_icons[i] %}
+			{% set business_itemData = business_data[i] %}
+			{% set business_itemName = business_name[i] %}
+			{% if business_icon and business_itemData and business_itemName %}
+				<div class="statistics-item">
+					<img class="icon" src="{{ business_icon }}" alt="Icon">
+					<h1>{{ business_itemData }}</h1>
+					<p>{{ business_itemName }}</p>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
