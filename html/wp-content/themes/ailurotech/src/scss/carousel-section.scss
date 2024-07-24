@@ -1,13 +1,7 @@
 .carousel-section {
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    to top,
-    #F4F6FA 0%,
-    #F4F6FA 50%,
-    background-color 50%,
-    background-color 100%
-  );
+  background: linear-gradient(to bottom, #f4f6fa 0%, #f4f6fa 35%, #e6e8f0 35%, #e6e8f0 70%, #f4f6fa 70%, #f4f6fa 100%);
 }
 
 .main-carousel {
@@ -59,7 +53,7 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 5%;
+  margin-top: 25%;
   margin-bottom: 10%;
 }
 
@@ -131,6 +125,9 @@
   .carousel-cell {
       padding-left: 0;
       padding-right: 0;
-      gap: 0px;
+      gap: 5px;
+  }
+  .carousel-section {
+    background: linear-gradient(to bottom, #f4f6fa 0%, #f4f6fa 35%, #e6e8f0 35%, #e6e8f0 60%, #f4f6fa 60%, #f4f6fa 100%);
   }
 }
