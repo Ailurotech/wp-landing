@@ -1,5 +1,4 @@
 
-
 <div class="subscription-page">
     <h1>Unleash your potential. Scale your business, increase productivity, and keep your teams connected</h1>
     <div class="toggle-buttons">
@@ -7,30 +6,24 @@
         <button id="yearly" class="toggle-button">Pay Yearly</button>
     </div>
     <div class="subscription-options">
-        <div class="option" data-monthly="20" data-yearly="200">
-            <h2>Professional</h2>
-            <p>$<span class="price">20</span></p>
-            <ul>
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-            </ul>
-        </div>
-        <div class="option" data-monthly="30" data-yearly="300">
-            <h2>Business</h2>
-            <p>$<span class="price">30</span></p>
-            <ul>
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-            </ul>
-        </div>
-        <div class="option" data-monthly="50" data-yearly="500">
-            <h2>Core</h2>
-            <p>$<span class="price">50</span></p>
-            <ul>
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-            </ul>
-        </div>
+        {% include 'views/partial/components/subscription-option.twig' with {
+            'monthly_price': '20',
+            'yearly_price': '200',
+            'title': 'Professional',
+            'features': ['Feature 1', 'Feature 2']
+        } %}
+        {% include 'views/partial/components/subscription-option.twig' with {
+            'monthly_price': '30',
+            'yearly_price': '300',
+            'title': 'Business',
+            'features': ['Feature 1', 'Feature 2']
+        } %}
+        {% include 'views/partial/components/subscription-option.twig' with {
+            'monthly_price': '50',
+            'yearly_price': '500',
+            'title': 'Core',
+            'features': ['Feature 1', 'Feature 2']
+        } %}
     </div>
 </div>
 

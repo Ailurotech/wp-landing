@@ -1,0 +1,9 @@
+<div class="option" data-monthly="{{ monthly_price }}" data-yearly="{{ yearly_price }}">
+    <h2>{{ title }}</h2>
+    <p>$<span class="price">{{ monthly_price }}</span></p>
+    <ul>
+        {% for feature in features %}
+            <li>{{ feature }}</li>
+        {% endfor %}
+    </ul>
+</div>
