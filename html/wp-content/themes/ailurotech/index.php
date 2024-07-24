@@ -65,6 +65,21 @@ $context['carousel_bottom_second_detail']=explode("!", get_field('carousel_botto
 $context['carousel_bottom_third_detail']=explode("!", get_field('carousel_bottom_third_detail'));
 
 
+// business section
+$context['business_title'] = get_field('business_title');
+$context['business_description'] = get_field('business_description');
+$context['tab1_name'] = get_field('tab1_name');
+$context['tab2_name'] = get_field('tab2_name');
+$context['tab3_name'] = get_field('tab3_name');
+$context['tab4_name'] = get_field('tab4_name');
+$context['tab1_img'] = get_field('tab1_img');
+$context['tab2_img'] = get_field('tab2_img');
+$context['tab3_img'] = get_field('tab3_img');
+$context['tab4_img'] = get_field('tab4_img');
+$context['business_icons'] = explode("!", get_field('business_statistics_icon'));
+$context['business_data'] = explode("!", get_field('business_statistics_data'));
+$context['business_name'] = explode("!", get_field('business_statistics_name'));
+
 Timber::render('partial/index.twig', $context);
 
 
