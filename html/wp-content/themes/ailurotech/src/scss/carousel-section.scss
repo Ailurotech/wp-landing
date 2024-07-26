@@ -2,6 +2,10 @@
   width: 100%;
   height: auto;
   background: linear-gradient(to bottom, #f4f6fa 0%, #f4f6fa 35%, #e6e8f0 35%, #e6e8f0 70%, #f4f6fa 70%, #f4f6fa 100%);
+  p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 .main-carousel {
@@ -14,8 +18,8 @@
   padding-right: 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr;
-  gap: 20px;
+  grid-template-rows: auto auto auto auto 1fr;
+  gap: 10px;
   counter-increment: gallery-cell;
 }
 
@@ -38,10 +42,9 @@
 }
 
 .carousel-details-title {
-  margin-top: 15px;
-  margin-bottom: 15px;
   font-size: 20px;
   font-weight: 600;
+  margin-top: 20px;
 }
 
 .carousel-details-title-details {
@@ -53,7 +56,7 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 25%;
+  margin-top: 15%;
   margin-bottom: 10%;
 }
 
