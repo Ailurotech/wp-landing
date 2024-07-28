@@ -53,12 +53,15 @@ $context['contact_title'] = get_field('title');
 // Subscription Plans
 $plans = array();
 for ($i = 1; $i <= 3; $i++) {
+    $features = get_field('plan_' . $i . '_features');
+    $features_array = $features ? explode("\n", trim($features)) : array();
+
     $plans[] = array(
         'title' => get_field('plan_' . $i . '_title') ?: '',
         'description' => get_field('plan_' . $i . '_description') ?: '',
         'monthly_price' => get_field('plan_' . $i . '_monthly_price') ?: 0,
         'yearly_price' => get_field('plan_' . $i . '_yearly_price') ?: 0,
-        'features' => get_field('plan_' . $i . '_features') ?: array(),
+        'features' => $features_array,
         'button_link' => get_field('plan_' . $i . '_button_link') ?: '#',
         'button_text' => get_field('plan_' . $i . '_button_text') ?: 'Sign Up',
     );
