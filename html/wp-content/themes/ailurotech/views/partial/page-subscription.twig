@@ -10,15 +10,21 @@
     </div>
     <div class="subscription-options">
         {% for plan in plans %}
-            {% include 'views/partial/components/subscription-option.twig' with {
-                'title': plan.title,
-                'description': plan.description,
-                'monthly_price': plan.monthly_price,
-                'yearly_price': plan.yearly_price,
-                'features': plan.features,
-                'button_link': plan.button_link,
-                'button_text': plan.button_text
-            } %}
+            <div class="option" data-monthly="{{ plan.monthly_price }}" data-yearly="{{ plan.yearly_price }}">
+                <h2>{{ plan.title }}</h2>
+                <p>{{ plan.description }}</p>
+                <p>
+                    $<span class="price">{{ plan.yearly_price }}</span> <span class="period">/ Year</span>
+                </p>
+                <div class="button-container">
+                    <a href="{{ plan.button_link }}" class="button">{{ plan.button_text }}</a>
+                </div>
+                <ul>
+                    {% for feature in plan.features %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         {% endfor %}
     </div>
 </div>
