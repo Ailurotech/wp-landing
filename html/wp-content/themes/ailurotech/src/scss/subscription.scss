@@ -150,7 +150,7 @@
                 .button {
                     font-size: 16px;
                     display: inline-block;
-                    padding: 10px 91px;
+                    padding: 10px 110px; /* 增加按钮的宽度 */
                     background-color: rgba(51, 102, 255, 1);
                     color: #fff;
                     text-decoration: none;
@@ -160,6 +160,20 @@
                         background-color: rgba(41, 82, 204, 1);
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 10px;
+
+        .subscription-options {
+            flex-direction: column;
+            gap: 20px;
+
+            .option {
+                width: 100%;
+                padding: 20px;
             }
         }
     }
