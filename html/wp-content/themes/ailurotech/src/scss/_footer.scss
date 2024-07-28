@@ -1,7 +1,7 @@
 .footer-content-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Creates four equal columns */
-    gap: 20px;  /* Optional: Adjusts the gap between columns */
+    grid-template-columns: repeat(4, 1fr);  
+    gap: 20px;  
 }
 .footer-logo{
     height: auto;
@@ -10,8 +10,8 @@
 }
 
 .footer-icons {
-    width: auto;  /* Makes images fill their container */
-    height: 2rem;  /* Maintains aspect ratio of images */
+    width: auto;  
+    height: 2rem;  
     margin-right: 15px;
 }
 
@@ -21,7 +21,7 @@
     margin-bottom: 30px;
 }
 .footer-links:hover {
-    color: darkblue; /* 悬停时的颜色 */
+    color: darkblue; 
 }
 
 .column-title{
