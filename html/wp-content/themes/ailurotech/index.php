@@ -102,4 +102,3 @@ for ($i = 1; $i <= 3; $i++) {
 $context['plans'] = $plans;
 
 Timber::render('partial/index.twig', $context);
-?>
