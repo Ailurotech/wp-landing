@@ -76,10 +76,33 @@
             width: 35%;
             text-align: left;
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
             &:hover {
                 transform: translateY(-10px);
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-          
+            }
+
+            &.active {
+                background-color: rgba(51, 102, 255, 1);
+                color: #fff;
+
+                h2, p, ul, li {
+                    color: #fff;
+                }
+
+                .price, .period {
+                    color: #fff;
+                }
+
+                .button-container .button {
+                    background-color: #fff;
+                    color: rgba(51, 102, 255, 1);
+
+                    &:hover {
+                        background-color: #eee;
+                        color: rgba(41, 82, 204, 1);
+                    }
+                }
             }
 
             h2 {
