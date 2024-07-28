@@ -1,8 +1,12 @@
 <div class="subscription-page">
     <h1>Unleash your potential. Scale your business, increase productivity, and keep your teams connected</h1>
     <div class="toggle-buttons">
-        <button id="monthly" class="toggle-button active">Pay Monthly</button>
-        <button id="yearly" class="toggle-button">Pay Yearly</button>
+        <span id="yearly-label">Pay Yearly</span>
+        <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider round"></span>
+        </label>
+        <span id="monthly-label">Pay Monthly</span>
     </div>
     <div class="subscription-options">
         {% for plan in plans %}
@@ -18,4 +22,3 @@
         {% endfor %}
     </div>
 </div>
-

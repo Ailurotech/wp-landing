@@ -1,21 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const toggleButtons = document.querySelectorAll('.toggle-button');
-  const subscriptionOptions = document.querySelectorAll('.option');
+    const toggleSwitch = document.getElementById('toggle-switch');
+    const subscriptionOptions = document.querySelectorAll('.option');
+    const toggleLabel = document.getElementById('toggle-label');
+    const monthlyLabel = document.getElementById('monthly-label');
+    const yearlyLabel = document.getElementById('yearly-label');
 
-  toggleButtons.forEach(button => {
-      button.addEventListener('click', function () {
-          const isYearly = this.id === 'yearly';
-          toggleButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
+    toggleSwitch.addEventListener('change', function () {
+        subscriptionOptions.forEach(option => {
+            const priceSpan = option.querySelector('.price');
+            const periodSpan = option.querySelector('.period');
+            if (toggleSwitch.checked) {
+                priceSpan.textContent = option.getAttribute('data-yearly');
+                periodSpan.textContent = ' / Year';
+                monthlyLabel.style.color = '#333';
+                yearlyLabel.style.color = '#4caf50';
+            } else {
+                priceSpan.textContent = option.getAttribute('data-monthly');
+                periodSpan.textContent = ' / Month';
+                yearlyLabel.style.color = '#333';
+                monthlyLabel.style.color = '#4caf50';
+            }
+        });
+    });
 
-          subscriptionOptions.forEach(option => {
-              const priceSpan = option.querySelector('.price');
-              const price = isYearly ? option.getAttribute('data-yearly') : option.getAttribute('data-monthly');
-              priceSpan.textContent = price;
-          });
-      });
-  });
-
-  // Trigger click on the default selected button
-  document.getElementById('monthly').click();
+    // Set initial state
+    subscriptionOptions.forEach(option => {
+        const priceSpan = option.querySelector('.price');
+        const periodSpan = option.querySelector('.period');
+        priceSpan.textContent = option.getAttribute('data-monthly');
+        periodSpan.textContent = ' / Month';
+        monthlyLabel.style.color = '#4caf50';
+    });
 });
