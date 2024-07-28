@@ -50,5 +50,19 @@ $context['button_href'] = get_field('buttonHref');
 $context['contact_content'] = get_field('content');
 $context['contact_title'] = get_field('title');
 
-// Timber::render('partial/index.twig', $context);
+// Subscription Plans
+$plans = array();
+for ($i = 1; $i <= 3; $i++) {
+    $plans[] = array(
+        'title' => get_field('plan_' . $i . '_title') ?: '',
+        'description' => get_field('plan_' . $i . '_description') ?: '',
+        'monthly_price' => get_field('plan_' . $i . '_monthly_price') ?: 0,
+        'yearly_price' => get_field('plan_' . $i . '_yearly_price') ?: 0,
+        'features' => get_field('plan_' . $i . '_features') ?: array(),
+        'button_link' => get_field('plan_' . $i . '_button_link') ?: '#',
+        'button_text' => get_field('plan_' . $i . '_button_text') ?: 'Sign Up',
+    );
+}
+$context['plans'] = $plans;
+
 Timber::render('partial/index.twig', $context);
