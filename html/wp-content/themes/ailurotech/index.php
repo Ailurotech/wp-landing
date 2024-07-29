@@ -28,7 +28,7 @@ $context['links_array'] = get_field("icon") ? explode(" ", get_field("icon")) : 
 $context['icon_target'] = get_field("icon_target") ? explode(" ", get_field("icon_target")) : [];
 
 /* Contact section */
-$context['contact_section_bg'] = get_field('bgVideo') ? get_field('bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1' : '';
+$context['contact_section_bg'] = get_field('bgVideo') ? get_field('bgVideo') . '&amp;autoplay=1&amp;mute=1&amp;loop=1' : '';
 $context['button_text'] = get_field('buttonText') ?: '';
 $context['button_href'] = get_field('buttonHref') ?: '';
 $context['contact_content'] = get_field('content') ?: '';
@@ -44,7 +44,7 @@ $context['feature_right_details_title'] = get_field('feature_right_details_title
 $context['feature_right_details_number'] = get_field('feature_right_details_number') ? explode("!", get_field('feature_right_details_number')) : [];
 
 /* Welcome section */
-$context['welcome_section_bg'] = get_field('welcome_bgVideo') ? get_field('welcome_bgVideo').'&amp;autoplay=1&amp;mute=1&amp;loop=1' : '';
+$context['welcome_section_bg'] = get_field('welcome_bgVideo') ? get_field('welcome_bgVideo') . '&amp;autoplay=1&amp;mute=1&amp;loop=1' : '';
 $context['welcome_button_text'] = get_field('welcome_buttonText') ?: '';
 $context['welcome_button_href'] = get_field('welcome_buttonHref') ?: '';
 $context['welcome_content'] = get_field('welcome_content') ?: '';
@@ -66,6 +66,16 @@ $context['tab4_img'] = get_field('tab4_img') ?: '';
 $context['business_icons'] = get_field('business_statistics_icon') ? explode("!", get_field('business_statistics_icon')) : [];
 $context['business_data'] = get_field('business_statistics_data') ? explode("!", get_field('business_statistics_data')) : [];
 $context['business_name'] = get_field('business_statistics_name') ? explode("!", get_field('business_statistics_name')) : [];
+
+//page-contact
+$context['contact_name'] = get_field('contact_name');
+$context['contact_email'] = get_field('contact_email');
+$context['contact_phone'] = get_field('contact_phone');
+$context['contact_website'] = get_field('contact_website');
+$context['contact_message'] = get_field('contact_message');
+
+
+
 
 Timber::render('partial/index.twig', $context);
 
