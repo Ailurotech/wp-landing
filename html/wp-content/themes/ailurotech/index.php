@@ -48,6 +48,19 @@ $context['welcome_content'] = get_field('welcome_content');
 $context['welcome_title'] = get_field('welcome_title');
 $context['demo_text'] = get_field('welcome_linkText');
 $context['demo_href'] = get_field('welcome_linkHref');
+// team and customer section
+$context['team_name'] = explode("!", get_field('team_name'));
+$context['team_image'] = explode("!", get_field('team_image'));
+$context['team_role'] = explode("!", get_field('team_role'));
+$context['team_rate'] = explode("!", get_field('team_rate'));
+$context['team_title'] = explode("#", get_field('team_title'));
+$context['team_information'] = explode("!", get_field('team_information'));
+
+
+
+
+
+
 
 Timber::render('partial/index.twig', $context);
 

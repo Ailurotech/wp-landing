@@ -1,0 +1,105 @@
+.team-container{
+    width: 1000px ;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.team-title-container{
+    margin-bottom: 5%;
+    margin-left: 20%;
+}
+
+.carousel .carousel-footer{
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: scroll;
+}
+.carousel-footer .carousel-cell{
+    width: 300px;
+    height: 260px;
+    margin-bottom: 5%;
+    margin-right: 50px;
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+
+
+
+@media  (max-width: 1050px) {
+    .team-container{
+       width: 650px; 
+    }
+    .carousel-footer .carousel-cell{
+        margin-right: 50px;
+        
+    }
+    
+}
+@media  (max-width: 650px) {
+    .team-container{
+       width: 300px; 
+    }
+    .carousel-footer .carousel-cell{
+        margin-right: 0x;
+    }
+    .flickity-page-dots {
+        display: none;
+      }
+      
+      .flickity-page-dots .dot {
+        display: none;
+      }
+}
+
+.flickity-button {
+    background: #333;
+  }
+  .flickity-button:hover {
+    background: #F90;
+  }
+  
+  .flickity-prev-next-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .flickity-button-icon {
+    fill: white;
+  }
+  
+  .flickity-prev-next-button.previous {
+    left: -40px;
+  }
+  .flickity-prev-next-button.next {
+    right: -40px;
+  }
+
+  .flickity-page-dots {
+    bottom: -22px;
+    margin-bottom: 20px;
+  }
+  
+  .flickity-page-dots .dot {
+    height: 4px;
+    width: 40px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+

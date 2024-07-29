@@ -1,5 +1,5 @@
 .footer-content-container {
-    display: grid;
+    display: grid;//grid
     grid-template-columns: repeat(4, 1fr);  
     gap: 20px;  
 }
@@ -31,7 +31,7 @@
 
 @media  (max-width: 600px) {
     .footer-content-container {
-        display: flex;
+        display: flex;//flex
         flex-wrap: wrap; 
         gap: 20px; 
     }

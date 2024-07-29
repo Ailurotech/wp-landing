@@ -1,0 +1,75 @@
+.rate-people{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.rate-people-image-container{
+    width: 50px;
+    height: 50px;
+}
+
+.rate-people-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+
+.rate-people-name-container{
+    margin-left: 10px;
+}
+
+.rate-name{
+    font-family: Blinker;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: rgba(16, 24, 64, 1);
+
+}
+
+.rate-role{
+    font-family: Blinker;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: rgba(143, 149, 178, 1);
+}
+.rate-people-rate-container{
+    flex: 1;
+    padding-top: 23px;
+    padding-left: 80px;
+
+}
+.rate-people-rate{
+    width: 12px;
+    height: 12px;
+}
+
+.rate-title-cointainer{
+  
+}
+
+.rate-title{
+    font-family: Blinker;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: rgba(16, 24, 64, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.rate-info{
+    font-family: Blinker;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: rgba(105, 111, 140, 1);
+    margin-bottom: 10px;  
+}

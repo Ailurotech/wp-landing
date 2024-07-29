@@ -1,0 +1,22 @@
+<div class="carousel-cell">
+    <div class="rate-people">
+        <div class="rate-people-image-container">
+            <img class="rate-people-image" src="{{image}}"/>
+        </div>
+        <div class="rate-people-name-container">
+            <p class="rate-name">{{name}}</p>
+            <p class="rate-role">{{role}} </p>
+        </div>
+        <div class="rate-people-rate-container">
+            {% for i in 0..(rate - 1) %}
+                <img class="rate-people-rate" src="https://s2.loli.net/2024/07/29/9q5PktjLO3osKzQ.png"/>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="rate-title-container">
+        <p class="rate-title">{{title}}<p>
+    </div>
+    <div class="rate-info">
+        <p class="rate-info">{{info}}<p>
+    </div>
+</div>
