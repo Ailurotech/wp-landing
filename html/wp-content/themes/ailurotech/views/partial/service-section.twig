@@ -1,0 +1,22 @@
+<div class="service-section">
+	{% if service_description or service_title %}
+		<p>{{service_description}}</p>
+		<h1>{{service_title}}</h1>
+	{% endif %}
+	<div class="cards">
+		{% for i in 0..(service_icons|length - 1) %}
+			{% set service_icon = service_icons[i] %}
+			{% set service_icon_name = service_icon_names[i] %}
+			{% set service_icon_description = service_icon_descriptions[i] %}
+			{% if service_icon and service_icon_name and service_icon_description %}
+				<div class="s-card">
+					<div class="icon-container">
+						<img src={{service_icon}} alt="icon">
+					</div>
+					<h3>{{service_icon_name}}</h3>
+					<p>{{service_icon_description}}</p>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

@@ -101,4 +101,11 @@ for ($i = 1; $i <= 3; $i++) {
 }
 $context['plans'] = $plans;
 
+// service section
+$context['service_description'] = get_field('service_description');
+$context['service_title'] = get_field('service_title');
+$context['service_icons'] = explode("!", get_field('service_icon'));
+$context['service_icon_names'] = explode("!", get_field('service_icon_name'));
+$context['service_icon_descriptions'] = explode("!", get_field('service_icon_description'));
+
 Timber::render('partial/index.twig', $context);
