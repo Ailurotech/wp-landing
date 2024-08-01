@@ -127,11 +127,14 @@
   }
 
   .carousel-cell {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 5px;
+      padding-right: 5px;
       gap: 5px;
   }
   .carousel-section {
     background: #e6e8f0
+  }
+  .carousel-bottom-title {
+    margin-top: 0;
   }
 }
