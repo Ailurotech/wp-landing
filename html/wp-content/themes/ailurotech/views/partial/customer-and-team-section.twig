@@ -1,14 +1,25 @@
 <div class="team-section">
     <div class="team-container">
         <div class="carousel carousel-footer">
-            {% for i in team_name %}
-                {% include 'partial/rate.twig' with {'image': team_image[loop.index-1], 
-                                                     'name': team_name[loop.index-1] ,
-                                                     'role': team_role[loop.index-1] ,              
-                                                     'rate': team_rate[loop.index-1]  ,                 
-                                                     'title': team_title[loop.index-1],
-                                                     'info': team_information[loop.index-1]                   } %}
-            {% endfor %}
+            
+                {% for i in team_name %}
+                    {% include 'partial/rate.twig' with {'image': team_image[loop.index-1], 
+                                                        'name': team_name[loop.index-1] ,
+                                                        'role': team_role[loop.index-1] ,              
+                                                        'rate': team_rate[loop.index-1]  ,                 
+                                                        'title': team_title[loop.index-1],
+                                                        'info': team_information[loop.index-1]                   } %}
+                {% endfor %}
+
+                {% for i in customer_name %}
+                    {% include 'partial/rate.twig' with {'image': customer_image[loop.index-1], 
+                                                        'name': customer_name[loop.index-1] ,
+                                                        'role': customer_role[loop.index-1] ,              
+                                                        'rate': customer_rate[loop.index-1]  ,                 
+                                                        'title': customer_title[loop.index-1],
+                                                        'info': customer_information[loop.index-1]                   } %}
+                {% endfor %}
+                
             </div>
         </div>
     </div>

@@ -56,6 +56,14 @@ $context['team_rate'] = explode("!", get_field('team_rate'));
 $context['team_title'] = explode("#", get_field('team_title'));
 $context['team_information'] = explode("!", get_field('team_information'));
 
+$context['customer_name'] = explode("!", get_field('customer_name'));
+$context['customer_image'] = explode("!", get_field('customer_image'));
+$context['customer_role'] = explode("!", get_field('customer_role'));
+$context['customer_rate'] = explode("!", get_field('customer_rate'));
+$context['customer_title'] = explode("#", get_field('customer_title'));
+$context['customer_information'] = explode("!", get_field('customer_information'));
+
+
 
 
 
