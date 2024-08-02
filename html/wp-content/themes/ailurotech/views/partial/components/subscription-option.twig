@@ -1,0 +1,15 @@
+<div class="option" data-monthly="{{ monthly_price }}" data-yearly="{{ yearly_price }}">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  <p>
+    $<span class="price">{{ yearly_price }}</span> <span class="period">/ Year</span>
+  </p>
+  <div class="button-container">
+    <a href="{{ button_link }}" class="button">{{ button_text }}</a>
+  </div>
+  <ul>
+    {% for feature in features %}
+      <li>{{ feature }}</li>
+    {% endfor %}
+  </ul>
+</div>
