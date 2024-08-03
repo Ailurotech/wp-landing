@@ -1,25 +1,45 @@
 <div class="team-section">
     <div class="team-container">
-        <div class="carousel carousel-footer">
-            
+        <div class="teammember-section">
+            <div class="team-top-title-container">
+                <h1 class="team-title">Our Team</h1>
+                <div class="exit-button" aria-label="Close" onclick="hideTeamSection()">
+                     <span class="line line1"></span>
+                    <span class="line line2"></span>
+                </div>
+            </div>
+            <div class="carousel carousel-footer">
                 {% for i in team_name %}
-                    {% include 'partial/rate.twig' with {'image': team_image[loop.index-1], 
-                                                        'name': team_name[loop.index-1] ,
-                                                        'role': team_role[loop.index-1] ,              
-                                                        'rate': team_rate[loop.index-1]  ,                 
-                                                        'title': team_title[loop.index-1],
-                                                        'info': team_information[loop.index-1]                   } %}
+                    {% include 'partial/rate.twig' with {
+                        'image': team_image[loop.index0], 
+                        'name': team_name[loop.index0],
+                        'role': team_role[loop.index0],              
+                        'rate': team_rate[loop.index0],                 
+                        'title': team_title[loop.index0],
+                        'info': team_information[loop.index0]
+                    } %}
                 {% endfor %}
-
+            </div>
+        </div>
+        <div class="customer-section">
+            <div class="team-top-title-container">
+                <h1 class="team-title">Our Customer</h1>
+                <div class="exit-button" aria-label="Close" onclick="hideCustomerSection()">
+                     <span class="line line1"></span>
+                    <span class="line line2"></span>
+                </div>
+            </div>
+            <div class="carousel carousel-footer">
                 {% for i in customer_name %}
-                    {% include 'partial/rate.twig' with {'image': customer_image[loop.index-1], 
-                                                        'name': customer_name[loop.index-1] ,
-                                                        'role': customer_role[loop.index-1] ,              
-                                                        'rate': customer_rate[loop.index-1]  ,                 
-                                                        'title': customer_title[loop.index-1],
-                                                        'info': customer_information[loop.index-1]                   } %}
+                    {% include 'partial/rate.twig' with {
+                        'image': customer_image[loop.index0], 
+                        'name': customer_name[loop.index0],
+                        'role': customer_role[loop.index0],              
+                        'rate': customer_rate[loop.index0],                 
+                        'title': customer_title[loop.index0],
+                        'info': customer_information[loop.index0]
+                    } %}
                 {% endfor %}
-                
             </div>
         </div>
     </div>

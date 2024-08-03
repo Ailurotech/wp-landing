@@ -1,3 +1,7 @@
+.team-section{
+  margin-bottom: 2%;
+}
+
 .team-container{
     width: 1000px ;
     height: auto;
@@ -37,8 +41,21 @@
     flex: 0 0 auto;
 }
 
+.team-top-title-container{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+}
 
-
+.team-title{
+  font-family: Blinker;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 41.6px;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
 
 @media  (max-width: 1050px) {
     .team-container{
@@ -92,7 +109,7 @@
 
   .flickity-page-dots {
     bottom: -22px;
-    margin-bottom: 20px;
+    margin-bottom: 3%;
   }
   
   .flickity-page-dots .dot {
@@ -101,5 +118,45 @@
     margin: 0;
     border-radius: 0;
   }
+
+  .exit-button {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.exit-button:hover {
+  background-color: rgb(51, 51, 51); 
+  .line1{
+    background-color: white;
+  }
+  .line2{
+    background-color: white;
+  }
+}
+
+.line {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+.line1 {
+    transform: rotate(45deg);
+}
+
+.line2 {
+    transform: rotate(-45deg);
+}
 
 
