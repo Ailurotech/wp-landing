@@ -45,3 +45,24 @@ add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
 foreach (glob(__DIR__ . '/functions/*.php') as $file) {
     require_once $file;
 }
+
+// subscription
+function add_to_context($context) {
+    $plans = array();
+
+    for ($i = 1; $i <= 3; $i++) {
+        $plans[] = array(
+            'title' => get_field('plan_' . $i . '_title') ?: '',
+            'description' => get_field('plan_' . $i . '_description') ?: '',
+            'monthly_price' => get_field('plan_' . $i . '_monthly_price') ?: 0,
+            'yearly_price' => get_field('plan_' . $i . '_yearly_price') ?: 0,
+            'features' => get_field('plan_' . $i . '_features') ?: array(),
+            'button_link' => get_field('plan_' . $i . '_button_link') ?: '#',
+            'button_text' => get_field('plan_' . $i . '_button_text') ?: 'Sign Up',
+        );
+    }
+
+    $context['plans'] = $plans;
+    return $context;
+}
+add_filter('timber/context', 'add_to_context');

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
   const toggleButton = document.querySelector('.navbar-toggle .toggle-icon');
   const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -18,3 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
       flkty.resize();
   }, 100);
 });
+

@@ -1,0 +1,30 @@
+<div class="subscription-page">
+    <h1>Unleash your potential. Scale your business, increase productivity, and keep your teams connected</h1>
+    <div class="toggle-buttons">
+        <span id="yearly-label">Pay Yearly</span>
+        <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider round"></span>
+        </label>
+        <span id="monthly-label">Pay Monthly</span>
+    </div>
+    <div class="subscription-options">
+        {% for plan in plans %}
+            <div class="option" data-monthly="{{ plan.monthly_price }}" data-yearly="{{ plan.yearly_price }}">
+                <h2>{{ plan.title }}</h2>
+                <p>{{ plan.description }}</p>
+                <p>
+                    $<span class="price">{{ plan.yearly_price }}</span> <span class="period">/ Year</span>
+                </p>
+                <div class="button-container">
+                    <a href="{{ plan.button_link }}" class="button">{{ plan.button_text }}</a>
+                </div>
+                <ul>
+                    {% for feature in plan.features %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
