@@ -4,7 +4,7 @@
   position: relative;
 }
 .welcome-section-content {
-  color: #fff; /* Text color */
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,5 +57,9 @@ a {
   display: inline;
   text-decoration: none;
   color: #fff;
+}
+
+.welcome-section-title{
+  font-size: 70px;
 }
 
