@@ -11,20 +11,21 @@
     <div class="subscription-options">
         {% for plan in plans %}
             <div class="option" data-monthly="{{ plan.monthly_price }}" data-yearly="{{ plan.yearly_price }}">
-                <h2>{{ plan.title }}</h2>
-                <p>{{ plan.description }}</p>
-                <p>
-                    $<span class="price">{{ plan.yearly_price }}</span> <span class="period">/ Year</span>
+                <h2 class="option-title">{{ plan.title }}</h2>
+                <p class="option-description">{{ plan.description }}</p>
+                <p class="option-price">
+                    <span class="price">${{ plan.yearly_price }}</span> <span class="period">/ Year</span>
                 </p>
                 <div class="button-container">
-                    <a href="{{ plan.button_link }}" class="button">{{ plan.button_text }}</a>
+                    <a href="{{ plan.button_link }}" class="sub-button">{{ plan.button_text }}</a>
                 </div>
                 <ul>
                     {% for feature in plan.features %}
-                        <li>{{ feature }}</li>
+                        <li class="sub-feature">{{ feature }}</li>
                     {% endfor %}
                 </ul>
             </div>
         {% endfor %}
     </div>
+    <button class="exit-button">hide</button>
 </div>
