@@ -18,7 +18,7 @@
   padding-right: 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 15vh 50vh 6vh 6vh;
+  grid-template-rows: 15vh 45vh 6vh 6vh;
   gap: 10px;
   counter-increment: gallery-cell;
 }
@@ -39,6 +39,7 @@
   border-radius: 20px;
   margin-left: auto;
   margin-right: auto;
+  object-fit: cover; 
 }
 
 .carousel-image-container {
