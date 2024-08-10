@@ -145,10 +145,15 @@
     margin-top: 0px;
   }
   .carousel-bottom {
-    height: 400px;
-    margin-bottom: 0px;
+    height: 300px;
+    margin-bottom: 10px;
     gap: 10%;
   }
-  
-  
+  .carousel-bottom-details-container {
+    flex: 1;
+  }
+  .carousel-image{
+    height: 200px;
+    width: 263px;
+  }
 }
