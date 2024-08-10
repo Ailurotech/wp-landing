@@ -18,7 +18,7 @@
   padding-right: 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(12%, auto) auto auto auto auto;
+  grid-template-rows: 15vh 50vh 6vh 6vh;
   gap: 10px;
   counter-increment: gallery-cell;
 }
@@ -50,7 +50,6 @@
 .carousel-details-title {
   font-size: 20px;
   font-weight: 600;
-  margin-top: 20px;
 }
 
 .carousel-details-title-details {
@@ -127,9 +126,10 @@
 @media (max-width: 850px) {
 
   .carousel-cell {
-      padding-left: 5px;
-      padding-right: 5px;
-      gap: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  gap: 5px;
+  grid-template-rows: auto auto auto auto;
   }
   .carousel-section {
     background: #fff
@@ -143,7 +143,7 @@
   }
   .carousel-bottom {
     height: auto;
-    margin-bottom: 30%;
+    margin-bottom: 10%;
     gap: 10%;
     display: flex;
     flex-direction: column;
@@ -156,4 +156,11 @@
     height: 100%;
     width: 100%;
   }
+}
+
+@media (max-width: 500px) {
+  .carousel-bottom {
+    margin-bottom: 30%;
+  }
+
 }
