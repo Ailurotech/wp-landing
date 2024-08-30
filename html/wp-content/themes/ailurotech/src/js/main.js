@@ -23,21 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var subscriptionPage = document.querySelector('.subscription-page');
-    var exit = document.querySelector('.exit-button');
-
-    exit.addEventListener('click', function() {
-        subscriptionPage.style.display = 'none'; 
-    });
-
-    
-    window.displaySubscription = function() {
-        
-        subscriptionPage.style.display = 'block'; 
-        subscriptionPage.scrollIntoView({ behavior: 'smooth' }); 
-    };
-});
 
 
 
